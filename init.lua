@@ -214,6 +214,9 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
+-- Open netrw
+vim.keymap.set('n', '<leader>se', '<cmd>:Explore<CR>', { desc = '[S]earch [E]xplore' })
+
 -- [[ Configure and install plugins ]]
 --
 --  To check the current status of your plugins, run
