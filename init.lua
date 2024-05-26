@@ -98,6 +98,9 @@ vim.g.have_nerd_font = true
 -- See `:help vim.opt`
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
 
 -- Make line numbers default
 vim.opt.number = true
@@ -231,6 +234,10 @@ vim.keymap.set('n', '<leader>se', '<cmd>:Explore<CR>', { desc = '[S]earch [E]xpl
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'neoclide/coc.nvim',
+  'vim-crystal/vim-crystal',
+  'HiPhish/rainbow-delimiters.nvim',
+  'reasonml-editor/vim-reason-plus',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
@@ -580,6 +587,10 @@ require('lazy').setup({
             },
           },
         },
+
+        ols = {
+          filetypes = { 'odin' },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -632,7 +643,7 @@ require('lazy').setup({
         -- Disable "format_on_save lsp_fallback" for languages that don't
         -- have a well standardized coding style. You can add additional
         -- languages here or re-enable it for the disabled ones.
-        local disable_filetypes = { c = true, cpp = true }
+        local disable_filetypes = { c = true, cpp = true, crystal = true }
         return {
           timeout_ms = 500,
           lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
