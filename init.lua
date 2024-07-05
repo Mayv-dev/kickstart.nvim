@@ -318,10 +318,7 @@ end
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'neoclide/coc.nvim',
-  'vim-crystal/vim-crystal',
   'HiPhish/rainbow-delimiters.nvim',
-  'reasonml-editor/vim-reason-plus',
 
   -- NOTE: Plugins can also be added by using a table,
   -- with the first argument being the link and the following
