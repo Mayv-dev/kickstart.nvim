@@ -406,6 +406,10 @@ require('lazy').setup({
     end,
   },
 
+  {
+    'purescript-contrib/purescript-vim',
+  },
+
   -- NOTE: Plugins can specify dependencies.
   --
   -- The dependencies are proper plugin specifications as well - anything
@@ -576,7 +580,6 @@ require('lazy').setup({
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
       local lspconfig = require 'lspconfig'
-      lspconfig.gleam.setup {}
 
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
