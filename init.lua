@@ -345,6 +345,13 @@ require('lazy').setup({
       { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
   },
+
+  {
+    'hat0uma/csvview.nvim',
+    config = function()
+      require('csvview').setup()
+    end,
+  },
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
 
@@ -570,6 +577,7 @@ require('lazy').setup({
 
       local lspconfig = require 'lspconfig'
       lspconfig.gleam.setup {}
+
       -- Enable the following language servers
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       --
